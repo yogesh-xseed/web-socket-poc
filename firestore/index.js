@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
 var admin = require("firebase-admin");
+var cors = require('cors')
 
+app.use(cors())
 var serviceAccount = require("./config/service-account-cred.json");
 
 admin.initializeApp({
