@@ -7,7 +7,7 @@
       <button @click="onClickButton(3)">3</button>
       <button @click="onClickButton(4)">4</button>
       <hr />
-      <button @click="getData()">Get Data</button>
+      <!-- <button @click="getData()">Get Data</button> -->
       <em>{{practiceSession.data}}</em>
     </div>
   </div>
@@ -21,6 +21,9 @@ export default {
     ...mapState({
       practiceSession: state => state.practiceSession
     })
+  },
+  created() {
+    this.getData();
   },
   methods: {
     ...mapActions(["getData", "incrementState"]),
